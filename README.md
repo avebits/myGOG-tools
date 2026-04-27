@@ -9,8 +9,13 @@ The second part is to temporarily set a different temp/tmp on another partition/
 Look for, and change these to your likings:
 
 ::  user configs
+
 set "gogpy=f:\gogrepoc.py"
+
 set "gogdir=f:\gog\"
+
 set "NEW_TEMP=d:\Temp"
+
 set "NEW_TMP=d:\Temp"
+
 set "INITIAL_DIR=%USERPROFILE%\Downloads" :: 
