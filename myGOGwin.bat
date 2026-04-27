@@ -27,12 +27,10 @@ if errorlevel 1 goto script1
 
 :script1
 echo Running backup...
-pause
-
-python "%gogbck%" update -lang en -os windows -standard
-python "%gogbck%" download "%gogbck%" -os windows -lang en -skipextras
-python "%gogbck%" clean "%gogbck%"
-python "%gogbck%" verify "%gogbck%"
+python "gogpy=f:\gogrepoc.py" update -lang en -os windows -standard
+python "%gogpy%" download "%gogdir%" -os windows -lang en -skipextras
+python "%gogpy%" clean "%gogdir%"
+python "%gogy%" verify "%gogdir%"
 goto menu
 
 :script2
