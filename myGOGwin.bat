@@ -27,7 +27,7 @@ if errorlevel 1 goto script1
 
 :script1
 echo Running backup...
-python "gogpy=f:\gogrepoc.py" update -lang en -os windows -standard
+python "%gogpy%" update -lang en -os windows -standard
 python "%gogpy%" download "%gogdir%" -os windows -lang en -skipextras
 python "%gogpy%" clean "%gogdir%"
 python "%gogy%" verify "%gogdir%"
