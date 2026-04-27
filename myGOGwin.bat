@@ -2,11 +2,11 @@
 title myGOG-tools v1
 
 ::  user configs
-set "gogpy=f:\gogrepoc.py"
-set "gogdir=f:\gog\"
-set "NEW_TEMP=d:\Temp"
-set "NEW_TMP=d:\Temp"
-set "INITIAL_DIR=%USERPROFILE%\Downloads" :: 
+set "gogpy=f:\gogrepoc.py" :: Where the main python script is
+set "gogdir=f:\gog\" :: Where you want the games to be downloaded to 
+set "NEW_TEMP=d:\Temp" :: New folder for temp/tmp
+set "NEW_TMP=d:\Temp" :: New folder for temp/tmp
+set "INITIAL_DIR=%USERPROFILE%\Downloads" :: Start folder to look after an applications .exe file. It can be as simple as t:\download
 
 
 :menu
