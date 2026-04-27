@@ -1,4 +1,4 @@
-# myGOG-tools
+# myGOG-tools for Windows
 
 Script tool to aid in downloading/backup and installing GOG's games. Run as Administrator.
 
