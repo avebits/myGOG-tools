@@ -1,5 +1,5 @@
 @echo off
-cd /d %~dp0
+pushd "%~dp0"
 title myGOG-tools v1 (Windows)
 
 ::  user configs backup
