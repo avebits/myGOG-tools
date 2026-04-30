@@ -1,22 +1,24 @@
 @echo off
-title myGOG-tools v1
+cd /d %~dp0
+title myGOG-tools v1 (Windows)
 
-::  user configs
+::  user configs backup
 set "gogpy=f:\gogrepoc.py" :: Where the main python script is
 set "gogdir=f:\gog\" :: Where you want the games to be downloaded to 
+::  user configs installing
 set "NEW_TEMP=d:\Temp" :: New folder for temp/tmp
 set "NEW_TMP=d:\Temp" :: New folder for temp/tmp
 set "INITIAL_DIR=%USERPROFILE%\Downloads" :: Start folder to look after an applications .exe file. It can be as simple as t:\download
 
 
 :menu
-echo ========================================================================
+echo =======================================================================
 echo   Select an option:
-echo ========================================================================
-echo 1. Run Script 1 - downloading/backing up gog collection with gogrepoc
-echo 2. Run Script 2 - Running the game with a temporarily temp/tmp
-echo 3. Exit
-echo ========================================================================
+echo =======================================================================
+echo     1. Run Script 1 - download/back up gog collection with gogrepoc
+echo     2. Run Script 2 - Running the game with a temporarily temp/tmp
+echo     3. Exit
+echo =======================================================================
 echo.
 
 choice /c 123 /n /m "Press 1, 2, or 3: "
@@ -35,18 +37,16 @@ goto menu
 
 :script2
 echo Running Script 2...
-@echo off
 
-
-::  save current temp/tmp
+::  save the current temp/tmp path
 set "OLDTEMP=%TEMP%"
 set "OLDTMP=%TMP%"
 
-::  setting new temp/tmp
+::  setting a new temp/tmp path
 set "TEMP=%NEW_TEMP%"
 set "TMP=%NEW_TMP%"
 
-::  checking if temp folder exists
+::  check if the new temp folder exists
 if not exist "%TEMP%" mkdir "%TEMP%"
 
 :: file explorer
@@ -55,7 +55,7 @@ for /f "usebackq delims=" %%i in (`powershell -Command "Add-Type -AssemblyName S
 :: check if user actually selected a file, if canceled --> just restore OLDTEMP
 if "%SETUP%"=="" (
     echo No file selected. Exiting.
-    :: Restore old TEMP/TMP
+    :: Restore old temp/tmp path
     set "TEMP=%OLDTEMP%"
     set "TMP=%OLDTMP%"
     exit /b
@@ -64,12 +64,12 @@ if "%SETUP%"=="" (
 :: ...and run it  
 "%SETUP%"
 
-:: -- restore temps
+:: -- restore temps to the old path again
 set "TEMP=%OLDTEMP%"
 set "TMP=%OLDTMP%"
 goto menu
 
+:: ending and exiting
 :end
-:: eol
-echo Goodbye!
+echo eol
 exit
