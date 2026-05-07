@@ -18,4 +18,4 @@ set "NEW_TEMP=d:\Temp"
 
 set "NEW_TMP=d:\Temp"
 
-set "INITIAL_DIR=%USERPROFILE%\Downloads" :: 
+set "INITIAL_DIR=%USERPROFILE%\Downloads" :: This is the directory the script open where you can choose an exeuteable file. Can be as simple as c:\dl
